@@ -4,29 +4,36 @@ project description here
 ### installation ###
 
 * clone the repo
-  '''git clone
-  '''
+  ```bash
+  git clone
+  ```
 
 * install dependencies
-    '''npm install
-    '''
+    ```bash
+    npm install
+    ```
 * rename .env.example to .env and fill in the values
 * start the server
-    '''npm start
-    '''
+    ```bash
+    npm start
+    ```
 
 ### dev usage ###
 * clone the repo
-  '''git clone
-  '''
+  ```bash
+  git clone
+  ```
 
 * install dependencies
-    '''npm install
-    '''
+    ```bash
+    npm install
+    ```
 * rename .env.example to .env and fill in the values
 * start the server
-    '''npm start
-    '''
+    ```bash
+    npm start
+    ```
 * run tests
-    '''npm test
-    '''
+    ```bash
+    npm test
+    ```
