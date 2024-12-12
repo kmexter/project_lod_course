@@ -39,10 +39,6 @@ rdfs:label "Argo"^^xsd:string.
 
 
 
-
-#Describing the main dataset
-
-
 <https://cdi.seadatanet.org/report/3541970> a dcat:Dataset, sdo:Dataset;
 dct:title "Carbo-Acid - Investigating the potential effects of ocean acidification on marine carbonate organisms along the Iberian margin coastal upwelling system: Coccolithophores pteropods planktonic and benthic foraminifera and corals."^^xsd:string;
 dct:identifier "https://cdi.seadatanet.org/report/3541970"^^xsd:anyURI ;
@@ -67,7 +63,6 @@ dct:publisher  <https://edmo.seadatanet.org/report/3288>;
 dct:creator  <https://edmo.seadatanet.org/report/3288> ;
 
 
-#Temporal Info
 dct:temporal [
       a dct:PeriodOfTime ;    
       dcat:startDate "2022-08-02"^^xsd:date ;    
@@ -76,7 +71,6 @@ dct:temporal [
 ;
 
 
-#Spatial Info
     dct:spatial [
     a dct:Location ;
     dcat:bbox               "POLYGON ((-12.04951 42.68739, -12.05394 42.67545, -12.07279 42.66073, -12.06208 42.65672, -12.0089 42.63759, -11.92675 42.61369, -11.88271 42.60537, -11.71133 42.57887, -11.70457 42.59801, -11.86923 42.62171, -11.91984 42.63202, -11.90467 42.65688, -11.95352 42.67044, -11.7891 42.692, -11.60781 42.7235, -11.19093 42.78861, -11.0180158 42.8161528, -10.8454539 42.8391279, -10.8486329 42.8586619, -11.0277813 42.8369984, -11.2975236 42.7946422, -11.517295 42.7599257, -11.6223362 42.7451476, -11.772798 42.718434, -11.9645111 42.6904616, -11.9980897 42.7020062, -12.0049743 42.6970489, -12.0138214 42.6791426, -12.04951 42.68739))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> , "POLYGON ((-9.82882 38.70659, -9.82071 38.6644, -9.81041 38.62282, -9.81602 38.62027, -9.8217 38.62441, -9.8325 38.62942, -9.84743 38.62985, -9.89246 38.61804, -9.93984 38.60082, -9.92893 38.58106, -9.8433 38.60824, -9.83148 38.60092, -9.81012 38.59736, -9.78711 38.61007, -9.78506 38.62413, -9.78592 38.63308, -9.7235 38.63886, -9.7374 38.70104, -9.79744 38.71069, -9.82882 38.70659))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> , "POLYGON ((-10.63353 39.16792, -10.6318 39.03984, -10.60425 39.04118, -10.51484 39.04477, -10.49057 39.05655, -10.42585 38.9479, -10.33912 38.79501, -10.35671 38.78859, -10.32322 38.72779, -10.30561 38.73277, -10.27458 38.66953, -10.24179 38.67706, -10.27786 38.75076, -10.47416 39.09309, -10.47955 39.1456, -10.51397 39.14755, -10.51444 39.16953, -10.63353 39.16792))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> , "POLYGON ((-9.38396 42.12731, -9.38953 42.10609, -9.39305 42.09181, -9.39968 42.06139, -9.38516 42.0603, -9.37869 42.09042, -9.37056 42.12694, -9.38396 42.12731))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ;
@@ -111,12 +105,10 @@ sdo:variableMeasured [
 
  a prov:Activity;
   prov:used <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0746/>,<http://vocab.nerc.ac.uk/collection/L22/current/TOOL0319/>,<http://vocab.nerc.ac.uk/collection/L22/current/NETT0187/>;
-  #Suggestion to separate the sensor from the platform as we currently do not hold this info
   prov:used <http://vocab.nerc.ac.uk/collection/B76/current/B7600031/> ;
 ].
 
 
-#Separation of platform and sensor by commenting out the following:
 <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0746/>  a sosa:Sensor, prov:Entity, skos:Concept;
 skos:prefLabel "Kongsberg EM 710 multibeam echosounder"^^xsd:string.
 <http://vocab.nerc.ac.uk/collection/L22/current/NETT0187/>  a sosa:Sensor, prov:Entity, skos:Concept;
@@ -125,19 +117,17 @@ skos:prefLabel "Hydro-Bios MultiNet Mammoth"^^xsd:string.
 skos:prefLabel "Kongsberg Simrad EA600 echosounder"^^xsd:string.
 
 
-#When we get more detailed data about the sensor and what it observes
-#sosa:observes <http://vocab.nerc.ac.uk/collection/P01/current/TEMPP681/> ;
-#sosa:isHostedBy <http://vocab.nerc.ac.uk/collection/B76/current/B7600031/> .
+sosa:observes <http://vocab.nerc.ac.uk/collection/P01/current/TEMPP681/> ;
+sosa:isHostedBy <http://vocab.nerc.ac.uk/collection/B76/current/B7600031/> .
 
 
 <http://vocab.nerc.ac.uk/collection/B76/current/B7600031/> a sosa:Platform;
 skos:prefLabel "National Oceanography Centre Autosub6000 autonomous underwater vehicle"^^xsd:string .
-#sosa:hosts <http://vocab.nerc.ac.uk/collection/L05/current/134/> .
+sosa:hosts <http://vocab.nerc.ac.uk/collection/L05/current/134/> .
 
 
 
 
-##Distribution
 <https://cdi.seadatanet.org/report/3541970/distribution/XYZ>    a dcat:Distribution ;
   dcat:downloadURL <https://cdi.seadatanet.org/> ;
   dct:title "XYZ ASCII Dataset"@en ;
@@ -145,13 +135,11 @@ skos:prefLabel "National Oceanography Centre Autosub6000 autonomous underwater v
   dcat:accessService exdata:subset-service-001 ;
   dcat:byteSize "5120"^^xsd:nonNegativeInteger ;
   dct:accessRights <http://vocab.nerc.ac.uk/collection/L07/current/CDIMTH02/> .
-#The quality info here. The quality info is fictional
 <https://cdi.seadatanet.org/report/3541970/QM> a dqv:QualityMeasurement ;
 dqv:isMeasurementOf  <https://vocab.nerc.ac.uk/search_nvs/L20/> ;
 dqv:value "good"^^xsd:string .
 
 
-#The service
 <https://cdi.seadatanet.org/>
   rdf:type dcat:DataService ;
   dct:conformsTo <https://www.w3.org/TR/sparql11-query/> ;
